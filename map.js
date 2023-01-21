@@ -31,6 +31,18 @@ async function getCoords(){
 	return [pos.coords.latitude, pos.coords.longitude]
 }
 // get foursquare busines
+const options = {
+	method: 'GET',
+	headers: {
+	  accept: 'application/json',
+	  Authorization: 'fsq3cpo2f+6DF3C8nqmyBeWdgMga49Hc3ideGTUpD2YEN7A='
+	}
+  };
+  
+  fetch('https://api.foursquare.com/v3/places/nearby', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
 // process fourquare array
 
